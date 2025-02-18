@@ -3,13 +3,10 @@ const app = express();
 const cors = require('cors')
 const port = process.env.PORT || 5000;
 
-app.use(
-    cors({
-        origin: ["http://localhost:5173", "https://your-production-domain.com"], // Add your domains here
-        methods: "GET,POST,PUT,DELETE", // Optional: Specify allowed HTTP methods
-        credentials: true, // Optional: If using cookies/auth
-    })
-);
+app.use(cors({
+    origin: ['http://localhost:5173', 'https://the-news-dragon-server-mr-nokib-nojom-uddins-projects.vercel.app'],
+    credentials: true
+  }));
 
 const categories = require('./data/categories.json');
 const news = require('./data/news.json')
